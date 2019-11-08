@@ -30,7 +30,8 @@ export default predicate =>
       return `${prefix}${namespace}${type}`;
     }
 
-    ownKeys(map).forEach(type => {
+    const types = ownKeys(map);
+    types.forEach && types.forEach(type => {
       const nextNamespace = connectPrefix(connectNamespace(type));
       const mapValue = get(type, map);
 
